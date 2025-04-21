@@ -25,7 +25,7 @@ def record_audio():
 
         print("recording stopped")
 
-        fileName = "D:\\Miniproject\\Voice-Biometrics\\data\\akash" + str(i) + ".wav"
+        fileName = "C:\\Users\\manda\\OneDrive\\Pictures\\miniproject\\miniproject\\Voice-Biometrics\\data\\deepak" + str(i) + ".wav"
         write(filename=fileName, rate=fs, data=rec)
         print("record again ?\n1 for yes and 0 for no")
         choice = int(input())
@@ -44,24 +44,24 @@ def extract_mfcc(file, n_mfcc=40):
 # Extract mfccs
 def createMfccCsv():
     df = pd.DataFrame(columns=range(0,40))
-    for i in range(0, 21):
-        fileName = "data\\akash" + str(i) + ".wav"
+    for i in range(0, 11):
+        fileName = "data\\deepak" + str(i) + ".wav"
         mfccs = extract_mfcc(fileName, 40)
         lst = list(mfccs)
         df.loc[len(df)] = lst
-    df.to_csv("data\Temp_Data\\team9.csv") #dont forget to change the paths (there are literally many paths in the project)
+    df.to_csv("data\\Temp_Data\\team.csv") #dont forget to change the paths (there are literally many paths in the project)
 
 
 # Append all individual data to complete data.
 def appendIndividualToCompleteCSV():
-    df1 = pd.read_csv("data\Temp_Data\\complete_data.csv") #read completedata.csv
-    df2 = pd.read_csv("data\Temp_Data\\t9.csv") #read speaker_name.csv
-    df1 = df1.append(df2, ignore_index=True) #append df2 into df1
-    df1.to_csv("data\Temp_Data\complete_data.csv") # save df1 in complete_data.csv (!! Note that the csv file should not be open in excel, that will give error).
+    df1 = pd.read_csv("data\\Temp_Data\\complete_data.csv")
+    df2 = pd.read_csv("data\\Temp_Data\\team.csv")
+    df1 = pd.concat([df1, df2], ignore_index=True)
+    df1.to_csv("data\\Temp_Data\\complete_data.csv", index=False)
 
 #call this function to record audio files
 # record_audio()
 # # call this function to create speaker_name.csv files of individual speakers
 # createMfccCsv()
 # #call this function to append speaker_name.csv of individual speaker into completedata.csv
-# appendIndividualToCompleteCSV()
+appendIndividualToCompleteCSV()

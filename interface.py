@@ -16,7 +16,7 @@ User_name = "Akash"
 positive_response = ["Cool, I am on it sir!", " Okay sir, I'm working on it!", "Just a second sir!"]
 negative_response = ["I think its invalid Command ", "I could not understand properly please speak again!","Sorry!, i don't know how to do this" ]
 gratitude = ["I am happy to help!", "My pleasure sir!", "No problem!"]
-email_id = "mandaakash6@gmail.com"
+email_id = "deepak.dodla11@gmail.com"
 password = "eaea gcls nege aahs"
 def speak(text):
     engine.say(text)
