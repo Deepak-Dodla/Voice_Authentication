@@ -14,8 +14,8 @@ def speaker_identifier():
 
     fs = 44100
     duration = 3
-    print("speak team9 when the recording starts")
-    engine.say("Speak team9 when the recording starts!")
+    print("speak when the recording starts")
+    engine.say("Speak when the recording starts!")
     engine.runAndWait()
 
     time.sleep(0.1)

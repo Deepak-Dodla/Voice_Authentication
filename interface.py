@@ -12,7 +12,7 @@ voices = engine.getProperty("voices")
 engine.setProperty("voice", voices[1].id)
 engine.setProperty("rate", 180)
 bot_name = "jarvis"
-User_name = "Akash"
+User_name = "Deepak"
 positive_response = ["Cool, I am on it sir!", " Okay sir, I'm working on it!", "Just a second sir!"]
 negative_response = ["I think its invalid Command ", "I could not understand properly please speak again!","Sorry!, i don't know how to do this" ]
 gratitude = ["I am happy to help!", "My pleasure sir!", "No problem!"]
@@ -105,7 +105,7 @@ def search_on_wikipedia():
 def new_text_file():
     speak("What will be the name of the file? ")
     file_name = take_user_input()
-    file = "D:\Miniproject\\"+file_name + ".txt"
+    file = "C:\\project\\"+file_name + ".txt"
     f = open(file, "w+")
     speak("What do you want to write into the file")
     content = take_user_input()
